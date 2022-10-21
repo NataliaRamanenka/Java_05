@@ -7,9 +7,9 @@ public class MinMaxAveTest {
         int [] array = {1, 2, 3, 4, 5, 6, 7, 8};
         int index1 = 2;
         int index2 = 6;
-        int [] expectedResult = {3, 7, 5};
+        double [] expectedResult = {3, 7, 5};
 
-        int [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
+        double [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -19,9 +19,9 @@ public class MinMaxAveTest {
         int [] array = {1, 2, 3, 4, 5, 6, 7, 8};
         int index1 = 6;
         int index2 = 2;
-        int [] expectedResult = {3, 7, 5};
+        double [] expectedResult = {3, 7, 5};
 
-        int [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
+        double [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -31,9 +31,9 @@ public class MinMaxAveTest {
         int [] array = {1, 2, 3, 4, 5, 6, 7, 8};
         int index1 = -6;
         int index2 = 2;
-        int [] expectedResult = {};
+        double [] expectedResult = {};
 
-        int [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
+        double [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
 
         Assert.assertEquals(actualResult, expectedResult);
     }
@@ -43,11 +43,33 @@ public class MinMaxAveTest {
         int [] array = {1, 2, 3, 4, 5, 6, 7, 8};
         int index1 = 10;
         int index2 = 2;
-        int [] expectedResult = {};
+        double [] expectedResult = {};
 
-        int [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
+        double [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
 
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Test
+    public void testIncreasing2SequenceHappyPath (){
+        int [] array = {1, 2, 3, 4, 5, 6, 7, 8};
+        int index1 = 5;
+        int index2 = 6;
+        double [] expectedResult = {6, 7, 6.5};
+
+        double [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+    @Test
+    public void testEqualIndexSequenceHappyPath (){
+        int [] array = {1, 2, 3, 4, 5, 6, 7, 8};
+        int index1 = 6;
+        int index2 = 6;
+        double [] expectedResult = {7, 7, 7};
+
+        double [] actualResult = new MinMaxAve().minMaxAve(array,index1,index2);
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }

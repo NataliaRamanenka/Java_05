@@ -4,10 +4,10 @@ public class MinMaxAve {
      * и среднее среди всех значений между 2-мя индексами.
      */
 
-    public int[] minMaxAve(int[] array, int index1, int index2) {
+    public double[] minMaxAve(int[] array, int index1, int index2) {
         if (index1 >= 0 && index2 >= 0 && index1 < (array.length - 1) && index2 < (array.length - 1)) {
-            int[] resultArray = new int[3];
-            int sum;
+            double[] resultArray = new double[3];
+            double sum;
             if (index1 <= index2) {
                 resultArray[0] = array[index1];
                 resultArray[1] = array[index1];
@@ -33,6 +33,6 @@ public class MinMaxAve {
 
         }
 
-        return new int[0];
+        return new double[0];
     }
 }
