@@ -310,4 +310,79 @@ public class Utils {
         }
     }
 
+    public boolean isDigit(char c) {
+
+        return c >= '0' && c <= '9';
+    }
+
+    public boolean isDigitInString(String str) {
+        if (str.length() > 0) {
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public boolean isOnlyDigitsInString(String str) {
+        if (str.length() == 0) {
+            return false;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) < '0' || str.charAt(i) > '9') {
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isDotOrComma(char c) {
+
+        return (c == ',' || c == '.');
+    }
+
+    public boolean isDotBetweenDigits(String str, int index) {
+
+        return ((index > 0) && (index < str.length() - 1)
+                && isDotOrComma(str.charAt(index))
+                && isDigit(str.charAt(index - 1))
+                && (isDigit(str.charAt(index + 1))));
+    }
+
+    public boolean isNegativeNumber(String str, int index) {
+
+        return index < str.length() - 1
+                && str.charAt(index) == '-'
+                && isDigit(str.charAt(index + 1));
+    }
+
+    public boolean isIntCanStoreValue(String str) {
+        if (str.length() <= 10) {
+
+            return Long.parseLong(str) <= Integer.MAX_VALUE;
+        }
+
+        return false;
+    }
+
+    public boolean arrayContainsNumber(int[]array, int number){
+        boolean found = false;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number){
+                found = true;
+                return found;
+            }
+        }
+        return found;
+    }
+
+
+
 }

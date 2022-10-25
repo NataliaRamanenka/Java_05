@@ -34,4 +34,14 @@ public class IntersectionTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Test
+    public void testSequenceCopiesHappyPath (){
+        int [] array1 = {1, 2, 4, 2, 4};
+        int [] array2 = {2, 9, 4, 2};
+        int [] expectedResult = {2, 4};
+
+        int [] actualResult = new Intersection().intersection(array1,array2);
+
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 }
